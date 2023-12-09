@@ -15,5 +15,5 @@
 (cir_area 7)
 
 ; EXCERCISE 4 | Shadow Area
-(define (sha_area w) (- (* pi (* (/ w 2) (/ w 2))) (/ (* w w) 2)))
+(define (sha_area w) (- (* pi (* (/ 7 2) (/ 7 2))) (/ (* 7 7) 2)))
 (sha_area 7)
