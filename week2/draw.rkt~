@@ -1,0 +1,113 @@
+#lang racket
+(require 2htdp/image)
+
+(define (t1) (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  30
+  10
+  0
+  1/5
+  10
+  90
+  0
+  1/5
+  "white"
+))
+
+
+
+(define (m1) (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  30
+  0
+  0
+  1/5
+  50
+  90
+  0
+  1/5
+  "yellow"
+))
+ 
+(define (m2) (flip-horizontal (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  0
+  10
+  0
+  1/5
+  50
+  90
+  0
+  1/5
+  "yellow"
+)))
+
+(define (m3) (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  30
+  0
+  0
+  1/5
+  50
+  90
+  0
+  1/5
+  "yellow"
+))
+
+ 
+(define (m4) (flip-horizontal (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  0
+  10
+  0
+  1/5
+  50
+  90
+  0
+  1/5
+  "yellow"
+)))
+
+(define (v) (flip-vertical (overlay (m3) (m4))))
+
+(define (mr) (flip-horizontal (v)))
+
+
+
+(define (ml) (flip-vertical (overlay (m1) (m2))))
+
+(define (M) (beside (ml) (flip-horizontal (ml))))
+
+
+(define (t4) (add-curve
+  (rectangle 100 100 "solid" "transparent")
+  30
+  10
+  0
+  1/5
+  50
+  90
+  0
+  1/5
+  "white"
+))
+
+(define (t) (text "McDonald's" 28 "white"))
+(t)
+ 
+
+(v)
+(ml)
+;(f)
+(M)
+
+(above (M) (t))
+(overlay (above (M) (t)) (rectangle 160 160 "solid" "red"))
+
+
+
+;(t1)
+;(t2)
+;(t3)
+;(t4)

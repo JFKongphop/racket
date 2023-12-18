@@ -1,0 +1,30 @@
+#lang racket
+
+(require 2htdp/image)
+
+(define (outer-layer)
+  (overlay
+    (circle 50 "solid" "red")
+    (rectangle 100 100 "solid" "green")))
+
+
+;(outer-layer)
+
+(define (rect-rot) (rotate 45 (rectangle 70 70 "solid" "green")))
+
+
+
+(define (first-layer) (overlay (rect-rot) (outer-layer)))
+
+;(first-layer)
+
+
+(define (second-layer) (overlay (rectangle 50 50 "solid" "green") (circle 35 "solid" "red")))
+
+(define (double-layer) (overlay (second-layer) (first-layer)))
+
+;(double-layer)
+
+
+
+(overlay (rotate 45 (rectangle 35 35 "solid" "green")) (overlay (circle 25 "solid" "red") (double-layer)))
